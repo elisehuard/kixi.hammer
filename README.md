@@ -1,4 +1,4 @@
-# hammer
+# kixi.hammer
 
 Simple utilities we reuse to parse and slice and dice our data with clojure.
 
@@ -8,6 +8,7 @@ Gathering:
 * some utils for cleaning
 * operations that occur time and again like join
 * some common specs or conformers
+* gorilla-repl or other notebook utils? (TODO)
 
 ## Usage
 
