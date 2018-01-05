@@ -1,4 +1,4 @@
-(ns hammer.specs
+(ns kixi.hammer.specs
   (:require [clojure.core :exclude [integer? double?]]
             [clojure.spec.alpha :as spec]
             [java-time :as t]))

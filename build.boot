@@ -6,5 +6,5 @@
                  [clojure.java-time "0.3.1"]])
 
 (task-options!
- pom {:project 'hammer
+ pom {:project 'kixi.hammer
       :version "0.1.0-SNAPSHOT"})

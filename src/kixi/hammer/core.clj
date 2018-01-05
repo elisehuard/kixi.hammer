@@ -1,4 +1,4 @@
-(ns hammer.core
+(ns kixi.hammer.core
   (:require   [clojure.java.io :as io]
               [clojure.data.csv :as csv]
               [pjstadig.reducible-stream :refer [decode-lines!]]))
