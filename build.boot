@@ -6,5 +6,18 @@
                  [clojure.java-time "0.3.1"]])
 
 (task-options!
- pom {:project 'kixi.hammer
+ pom {:project 'kixi/hammer
       :version "0.1.0-SNAPSHOT"})
+
+(deftask release-locally []
+  (comp (javac)
+        (pom)
+        (jar)
+        (install)))
+
+(deftask release
+  []
+  (comp (javac)
+        (pom)
+        (jar)
+        (push)))
