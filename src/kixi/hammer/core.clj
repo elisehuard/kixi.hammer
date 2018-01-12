@@ -90,3 +90,12 @@
   `(pred (val item))` returns true."
   [pred coll]
   (reduce-map (fn [xf] (fn [m k v] (if (pred v) (xf m k v) m))) coll))
+
+(defn sample [n coll]
+  "Returns a random n samples or percent of the rows, for integer or float input respectively"
+  (if (integer? n)
+    (take n (shuffle coll))
+    (take (Math/round (* n (count coll))) (shuffle coll))))
+   
+  
+  
