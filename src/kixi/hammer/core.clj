@@ -90,3 +90,21 @@
   `(pred (val item))` returns true."
   [pred coll]
   (reduce-map (fn [xf] (fn [m k v] (if (pred v) (xf m k v) m))) coll))
+
+(defn sample [n coll]
+  "Returns a random n samples or percent of the rows, for integer or float < 1 input respectively"
+  (if (integer? n)
+    (take n (shuffle coll))
+    (take (Math/round (* n (count coll))) (shuffle coll))))
+
+(defn numeric? [s]
+  "Returns true if string input is numeric"
+  (if-let [s (seq s)]
+    (let [s (if (= (first s) \-) (next s) s)
+          s (drop-while #(Character/isDigit %) s)
+          s (if (= (first s) \.) (next s) s)
+          s (drop-while #(Character/isDigit %) s)]
+      (empty? s))))
+
+  
+  
